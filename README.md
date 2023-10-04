@@ -1,2 +1,3 @@
-# masterjava-viewnext
-projects of my formation in viewnext
+# Masterjava VIEWNEXT
+Projects of my formation in VIEWNEXT
+
