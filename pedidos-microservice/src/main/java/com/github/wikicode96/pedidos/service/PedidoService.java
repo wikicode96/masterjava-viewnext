@@ -40,7 +40,9 @@ public class PedidoService implements IPedidoService{
      * @param pedido El objeto Pedido que se va a agregar.
      */
     @Override
-    public void addPedido(Pedido pedido) {
+    public String addPedido(Pedido pedido) {
+
+        boolean transaction = false;
 
         //Traemos todos loa productos y buscamos el que coindice con la ID del producto de pedido
         Producto[] productos = restTemplate.getForObject(url + "/productos", Producto[].class);
@@ -57,7 +59,15 @@ public class PedidoService implements IPedidoService{
                 // Añadimos el nuevo pedido
                 pedido.setFecha(LocalDateTime.now());
                 repository.save(pedido);
+
+                transaction = true;
             }
+        }
+
+        if (transaction == true){
+            return "Pedido añadido exitosamente";
+        } else {
+            return "El producto no existe o no hay suficiente Stock";
         }
     }
 }

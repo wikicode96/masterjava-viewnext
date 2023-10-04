@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Esta clase es un controlador Spring MVC que maneja las solicitudes relacionadas con los pedidos.
@@ -33,8 +35,13 @@ public class PedidoController {
      *
      * @param pedido El objeto Pedido que se va a agregar.
      */
-    @PostMapping(value = "pedido", consumes = MediaType.APPLICATION_JSON_VALUE)
-    void addPedido(@RequestBody Pedido pedido){
-        service.addPedido(pedido);
+    @PostMapping(value = "pedido", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    Map<String, String> addPedido(@RequestBody Pedido pedido){
+
+        String result = service.addPedido(pedido);
+        Map<String, String> response = new HashMap<>();
+        response.put("mensaje", result);
+
+        return response;
     }
 }

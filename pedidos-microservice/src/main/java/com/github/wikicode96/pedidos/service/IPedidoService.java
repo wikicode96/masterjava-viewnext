@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface IPedidoService {
 
-    void addPedido(Pedido pedido);
+    String addPedido(Pedido pedido);
     List<Pedido> allPedidos();
 }
