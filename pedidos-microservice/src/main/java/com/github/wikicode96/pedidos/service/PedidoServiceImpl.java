@@ -14,7 +14,7 @@ import java.util.List;
  * Esta clase implementa la interfaz IPedidoService y proporciona la lógica de negocio para los pedidos.
  */
 @Service
-public class PedidoService implements IPedidoService{
+public class PedidoServiceImpl implements IPedidoService{
 
     @Autowired
     PedidoRepository repository;
