@@ -1,29 +1,13 @@
 package com.github.wikicode96.app.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-import java.io.Serializable;
 import java.sql.Date;
 
-@Entity
-@Table(name = "vuelos")
-public class Flight implements Serializable {
+public class Flight {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @Column(name = "id")
     private int id;
-    @Column(name = "compañia")
     private String company;
-    @Column(name = "fecha")
     private Date date;
-    @Column(name = "precio")
     private int price;
-    @Column(name = "plazas")
     private int seats;
 
     public Flight() {
