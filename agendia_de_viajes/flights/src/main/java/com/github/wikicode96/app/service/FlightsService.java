@@ -19,25 +19,20 @@ public class FlightsService implements IFlightsService {
     }
 
     @Override
-    public String updateFlight(int id, int reservedSeats) {
+    public String updateFlight(int id, int seats) {
 
         // Finding fligth
         Flight flight = repository.findById(id).orElse(null);
 
-        // It's null or not have enought seats
-        if(flight != null){
-            if (flight.getSeats() >= reservedSeats){
+        if(flight != null && seats >= 0){
 
-                // Updating
-                flight.setSeats(flight.getSeats() - reservedSeats);
-                repository.save(flight);
+            // Updating flight
+            flight.setSeats(seats);
+            repository.save(flight);
 
-                return "Successful update";
-            }else{
-                return "there are not enough seats";
-            }
+            return "Successful update";
         }else{
-            return "Flight not found";
+            return "Flight not found or seats is incorrect value";
         }
     }
 }

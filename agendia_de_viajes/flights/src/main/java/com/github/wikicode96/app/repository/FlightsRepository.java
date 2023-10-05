@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface FlightsRepository extends JpaRepository<Flight, Integer> {
 
-    @Query("SELECT f FROM Flights f WHERE f.seats >= :requiredSeats")
+    @Query("SELECT f FROM Flight f WHERE f.seats >= :requiredSeats")
     List<Flight> findFlightsWithSufficientSeats(@Param("requiredSeats") int requiredSeats);
 }
