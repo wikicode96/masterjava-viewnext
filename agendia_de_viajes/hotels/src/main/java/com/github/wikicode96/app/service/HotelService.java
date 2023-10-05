@@ -19,7 +19,7 @@ public class HotelService implements IHotelService {
     }
 
     @Override
-    public Hotel getHotelByName(String name) {
+    public List<Hotel> getHotelByName(String name) {
         return repository.findByNombre(name);
     }
 }

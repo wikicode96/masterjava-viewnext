@@ -7,5 +7,5 @@ import java.util.List;
 public interface IHotelService {
 
     List<Hotel> getAllHotels();
-    Hotel getHotelByName(String name);
+    List<Hotel> getHotelByName(String name);
 }

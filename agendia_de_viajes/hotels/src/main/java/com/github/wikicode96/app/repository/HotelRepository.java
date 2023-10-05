@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface HotelRepository extends JpaRepository<Hotel, Integer> {
-    Hotel findByNombre(String nombre);
+    List<Hotel> findByNombre(String nombre);
 }
