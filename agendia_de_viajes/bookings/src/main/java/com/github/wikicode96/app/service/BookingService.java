@@ -31,7 +31,7 @@ public class BookingService implements IBookingService{
         // Check available flights
         int idFlight = booking.getFlightId();
 
-        Flight[] flights = restTemplate.getForObject(urlFlight + booking.getCustomers(), Flight[].class);
+        Flight[] flights = restTemplate.getForObject(urlFlight + "flights/" + booking.getCustomers(), Flight[].class);
 
         if (flights != null && flights.length > 0) {
             for (Flight f: flights) {
