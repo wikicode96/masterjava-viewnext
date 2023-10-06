@@ -67,19 +67,16 @@ public class BookingService implements IBookingService{
 
         List<Booking> allBookings = new ArrayList<>();
 
-        // Get request
+        // Get request hotels by name
         Hotel[] hotels = restTemplate.getForObject(urlHotel + "hotel/" + hotelName, Hotel[].class);
 
-        // Cath all ids by hotels
-        Set<Integer> ids = new HashSet<>();
-        for (Hotel h: hotels) {
-            ids.add(h.getId());
-        }
-
         // Get all booking by hotels id
-        for (int id: ids) {
-            List<Booking> dbBooking = repository.findByHotelId(id);
+        for (Hotel h: hotels) {
+            List<Booking> dbBooking = repository.findByHotelId(h.getId());
+
+            // Add bookings into the list that will be returned
             for (Booking b: dbBooking) {
+                b.setHotel(h);
                 allBookings.add(b);
             }
         }
