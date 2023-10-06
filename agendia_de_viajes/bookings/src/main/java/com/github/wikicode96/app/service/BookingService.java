@@ -47,7 +47,7 @@ public class BookingService implements IBookingService{
                     f.setSeats(f.getSeats() - booking.getCustomers());
                     restTemplate.put(urlFlight + "flight/" + f.getId() + "/" + f.getSeats(), String.class);
 
-                    return "successful";
+                    return "Successful";
                 }
             }
         }
