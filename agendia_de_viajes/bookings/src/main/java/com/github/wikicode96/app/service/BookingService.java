@@ -25,6 +25,12 @@ public class BookingService implements IBookingService{
     private final String urlHotel = "http://localhost:8080/";
     private final String urlFlight = "http://localhost:8081/";
 
+    /**
+     * Agrega una nueva reserva de hotel.
+     *
+     * @param booking La reserva de hotel que se va a agregar.
+     * @return Un mensaje que indica si la reserva se agregó con éxito o si hubo un problema.
+     */
     @Override
     public String addBooking(Booking booking) {
 
@@ -50,6 +56,12 @@ public class BookingService implements IBookingService{
         return "Somenthing was wrong";
     }
 
+    /**
+     * Obtiene una lista de reservas de hotel para un hotel específico.
+     *
+     * @param hotelName El nombre del hotel para el que se desea obtener las reservas.
+     * @return Una lista de reservas de hotel para el hotel especificado.
+     */
     @Override
     public List<Booking> getBookingsByHotelName(String hotelName) {
 

@@ -9,5 +9,12 @@ import java.util.List;
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Integer> {
+
+    /**
+     * Busca y devuelve una lista de reservas de hotel para un hotel específico.
+     *
+     * @param hotelId El identificador del hotel para el que se desean obtener las reservas.
+     * @return Una lista de reservas de hotel para el hotel especificado.
+     */
     List<Booking> findByHotelId(int hotelId);
 }
