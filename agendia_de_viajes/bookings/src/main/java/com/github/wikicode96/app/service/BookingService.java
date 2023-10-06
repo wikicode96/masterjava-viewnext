@@ -42,9 +42,10 @@ public class BookingService implements IBookingService{
                 if(f.getId() == idFlight && f.getSeats() >= booking.getCustomers()){
 
                     // Update seats of flight and save booking
+                    repository.save(booking);
+
                     f.setSeats(f.getSeats() - booking.getCustomers());
                     restTemplate.put(urlFlight + "flight/" + f.getId() + "/" + f.getSeats(), String.class);
-                    repository.save(booking);
 
                     return "successful";
                 }
