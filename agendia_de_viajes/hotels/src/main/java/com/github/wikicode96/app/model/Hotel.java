@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "hoteles")
+@Table(name = "hotels")
 public class Hotel implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,13 +17,13 @@ public class Hotel implements Serializable {
     @Id
     @Column(name = "id")
     private int id;
-    @Column(name = "nombre")
+    @Column(name = "name")
     private String name;
-    @Column(name = "categoria")
+    @Column(name = "category")
     private int category;
-    @Column(name = "precio")
+    @Column(name = "fare")
     private int fare;
-    @Column(name = "disponible")
+    @Column(name = "available")
     private boolean available;
 
     public Hotel() {

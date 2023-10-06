@@ -11,6 +11,12 @@ import java.util.List;
 @Repository
 public interface FlightsRepository extends JpaRepository<Flight, Integer> {
 
+    /**
+     * Recupera una lista de vuelos con un número mínimo de asientos requeridos.
+     *
+     * @param requiredSeats Número mínimo de asientos requeridos.
+     * @return Una lista de vuelos que cumplen con el requisito de asientos.
+     */
     @Query("SELECT f FROM Flight f WHERE f.seats >= :requiredSeats")
     List<Flight> findFlightsWithSufficientSeats(@Param("requiredSeats") int requiredSeats);
 }

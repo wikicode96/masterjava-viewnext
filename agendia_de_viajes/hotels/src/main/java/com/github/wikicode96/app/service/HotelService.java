@@ -13,13 +13,24 @@ public class HotelService implements IHotelService {
     @Autowired
     HotelRepository repository;
 
+    /**
+     * Obtiene todos los hoteles disponibles.
+     *
+     * @return Lista de hoteles.
+     */
     @Override
     public List<Hotel> getAllHotels() {
         return repository.findAll();
     }
 
+    /**
+     * Obtiene una lista de hoteles por nombre.
+     *
+     * @param name Nombre del hotel a buscar.
+     * @return Lista de hoteles con el nombre especificado.
+     */
     @Override
     public List<Hotel> getHotelByName(String name) {
-        return repository.findByNombre(name);
+        return repository.findByName(name);
     }
 }

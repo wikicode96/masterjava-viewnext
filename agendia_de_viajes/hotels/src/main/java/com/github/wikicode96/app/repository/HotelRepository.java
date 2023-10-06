@@ -8,5 +8,12 @@ import java.util.List;
 
 @Repository
 public interface HotelRepository extends JpaRepository<Hotel, Integer> {
-    List<Hotel> findByNombre(String nombre);
+
+    /**
+     * Busca hoteles por nombre.
+     *
+     * @param name Nombre del hotel a buscar.
+     * @return Lista de hoteles con el nombre especificado.
+     */
+    List<Hotel> findByName(String name);
 }
