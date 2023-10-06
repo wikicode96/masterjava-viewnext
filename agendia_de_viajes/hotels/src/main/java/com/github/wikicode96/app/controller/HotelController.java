@@ -34,7 +34,6 @@ public class HotelController {
      */
     @GetMapping(value = "hotel/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Hotel> getHotelByName(@PathVariable("name") String name){
-        // TODO: Controlar exepciones si encuentra o no hotel
         return service.getHotelByName(name);
     }
 }
