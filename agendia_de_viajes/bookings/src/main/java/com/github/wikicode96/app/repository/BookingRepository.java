@@ -1,7 +1,6 @@
 package com.github.wikicode96.app.repository;
 
 import com.github.wikicode96.app.model.Booking;
-import com.github.wikicode96.app.model.Hotel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
